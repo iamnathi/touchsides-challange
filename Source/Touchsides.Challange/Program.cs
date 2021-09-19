@@ -23,7 +23,7 @@ namespace Touchsides.Challange
 
             do
             {
-                Console.Write("Enter the absolute URI to the file (or press X to exit program): ");
+                Console.Write("Enter the absolute URI to the file (or press Ctrl + C to exit program): ");
                 var uriString = Console.ReadLine();
 
                 if (!Uri.IsWellFormedUriString(uriString, UriKind.Absolute))
@@ -52,18 +52,9 @@ namespace Touchsides.Challange
 
                 wordStats.AddOrUpdateWordsFromBookContents(bookContents);
 
-                //var dirtyWords = bookContents
-                //    .Replace(Environment.NewLine, " ")
-                //    .Split(EnglishPantuationCharacters);
-
-                //for (int index = 0; index < dirtyWords.Length; index++)
-                //{
-                //    wordStats.AddOrUpdateWord(dirtyWords[index]);
-                //}
-
                 Console.WriteLine(wordStats);
-
                 Console.WriteLine();
+
             } while (true);            
         }
 
